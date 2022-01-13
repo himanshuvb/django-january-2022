@@ -13,3 +13,5 @@ def songs_list(request):
 	for song in songs:
 		output += song + "<br>"
 	return HttpResponse("<h1>THIS IS A LIST OF SONGS</h1><br>" + output)
+
+
