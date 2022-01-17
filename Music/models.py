@@ -20,6 +20,7 @@ class Song(models.Model):
 	def __str__(self):
 		return self.album.title + " - " + self.name
 '''
+
 1> python code -> models.py
 
 2> python manage.py makemigrations
@@ -27,4 +28,5 @@ migrations/0001_initals.py -> intermediate file
 
 3> python manage.py migrate
 This will convert our python code in migrations folder to SQL code and run it 
+
 '''
