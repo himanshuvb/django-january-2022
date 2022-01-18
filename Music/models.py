@@ -5,11 +5,25 @@ from django.db import models
 class Album(models.Model):
 	title = models.CharField(max_length=200)
 	artist = models.CharField(max_length=200)
-	genre = models.CharField(max_length=50)
-	rating = models.IntegerField(default=0)
+	genre = models.CharField(max_length=50, choices=[
+		('English', 'English'),
+		('Rock', 'Rock'),
+		('Bollywood', 'Bollywood'),
+		('Pop', 'Pop'),
+		('Indie', 'Indie'),
+		('Soundtrack', 'Soundtrack'),
+		('Other', 'Other'),
+	])
+	rating = models.IntegerField(default=0, choices=[
+		(1, 1),
+		(2, 2),
+		(3, 3),
+		(4, 4),
+		(5, 5),
+	])
 
 	def __str__(self):
-		return str(self.id) + " - " + self.title
+		return self.title
 
 
 class Song(models.Model):
